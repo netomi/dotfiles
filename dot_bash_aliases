@@ -1,7 +1,7 @@
 # MODERN APPLICATIONS
-    exa_params=('--git' '--icons' '--classify' '--group-directories-first' '--time-style=long-iso' '--group' '--color-scale')
+    exa_params=('--classify' '--group-directories-first' '--time-style=long-iso' '--group' '--color-scale')
 
-{{- if ne .chezmoi.os "windows" }}
+if [ .chezmoi.os != "windows" ]; then
     alias ls='exa ${exa_params}'
     alias l='exa --git-ignore ${exa_params}'
     alias ll='exa --all --header --long ${exa_params}'
@@ -10,4 +10,5 @@
     alias lx='exa -lbhHigUmuSa@'
     alias lt='exa --tree'
     alias tree='exa --tree'
-{{- end }}
+fi
+
